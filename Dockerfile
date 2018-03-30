@@ -1,4 +1,4 @@
-FROM docker.elastic.co/logstash/logstash-oss:6.2.2
+FROM docker.elastic.co/kibana/kibana-oss:6.2.2
 
 MAINTAINER Justin Henderson justin@hasecuritysolutions.com
 
