@@ -17,7 +17,8 @@ RUN cd /usr/share/kibana/plugins && wget https://github.com/dlumbrer/kbn_network
 RUN cd /usr/share/kibana/plugins && unzip network_vis.zip
 RUN cd /usr/share/kibana/plugins && rm -f network_vis.zip
 RUN yum -y remove wget zip unzip
-RUN yum -y clean
+RUN yum -y clean all
+RUN rm -rf /var/cache/yum
 USER kibana
 
 STOPSIGNAL SIGTERM
