@@ -13,6 +13,9 @@ RUN unzip vega_vis-1.1.2--for-Kibana-6.1.4.zip
 RUN sed -i 's/"version": "6.1.4"/"version": "6.2.2"/g' /root/kibana/vega_vis/package.json
 RUN zip -r vega.zip /root/kibana
 RUN /bin/bash /usr/share/kibana/bin/kibana-plugin install file:///root/vega.zip
+RUN wget https://github.com/walterra/kibana-milestones-vis/releases/download/v6.2.2/kibana-milestones-vis-6.2.2.zip
+RUN /bin/bash /usr/share/kibana/bin/kibana-plugin install file:///root/kibana-milestones-vis-6.2.2.zip
+RUN rm -f /root/kibana-milestones-vis-6.2.2.zip
 RUN rm -f /root/vega_vis-1.1.2--for-Kibana-6.1.4.zip
 RUN rm -f /root/vega.zip
 RUN rm -rf /root/kibana
