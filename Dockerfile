@@ -1,4 +1,4 @@
-FROM docker.elastic.co/kibana/kibana-oss:6.2.2
+FROM docker.elastic.co/kibana/kibana-oss:6.2.4
 
 MAINTAINER Justin Henderson justin@hasecuritysolutions.com
 
@@ -10,7 +10,7 @@ RUN cd /usr/share/kibana/plugins && unzip network_vis.zip
 RUN cd /usr/share/kibana/plugins && rm -f network_vis.zip
 RUN wget https://github.com/nyurik/kibana-vega-vis/releases/download/v1.1.2/vega_vis-1.1.2--for-Kibana-6.1.4.zip
 RUN unzip vega_vis-1.1.2--for-Kibana-6.1.4.zip
-RUN sed -i 's/"version": "6.1.4"/"version": "6.2.2"/g' /root/kibana/vega_vis/package.json
+RUN sed -i 's/"version": "6.1.4"/"version": "6.2.4"/g' /root/kibana/vega_vis/package.json
 RUN zip -r vega.zip /root/kibana
 RUN /bin/bash /usr/share/kibana/bin/kibana-plugin install file:///root/vega.zip
 RUN rm -f /root/vega_vis-1.1.2--for-Kibana-6.1.4.zip
