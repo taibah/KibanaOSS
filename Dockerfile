@@ -16,10 +16,6 @@ RUN cd /usr/share/kibana/plugins && wget https://github.com/dlumbrer/kbn_network
     && rm -f /root/vega_vis-1.1.2--for-Kibana-6.1.4.zip \
     && rm -f /root/vega.zip \
     && rm -rf /root/kibana
-COPY ./entrypoint.sh /opt/
-RUN chmod +x /opt/entrypoint.sh
 USER kibana
 
 STOPSIGNAL SIGTERM
-
-CMD /bin/bash /opt/entrypoint.sh
